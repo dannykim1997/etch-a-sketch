@@ -1,17 +1,34 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .title {
     font-size: 36px;
+    margin: 20px;
+}
+
+.grid-size-title {
+    font-size: 24px;
+    text-align: center;
+    margin: 12px;
 }
 
 .grid {
     border: solid black;
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    height: 700px;
     display: inline-grid;
-    /* grid-template-columns: repeat(16, 2fr);
-    grid-template-rows: repeat(16, 2fr); */
 }
 
 .squares {
     border: solid black 1px;
     cursor: crosshair;
+}
+
+.grid-size-button {
+    margin: 12px;
+    font-size: 18px;
+    border-radius: 8px;
 }

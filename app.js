@@ -1,8 +1,8 @@
 const grid = document.querySelector('.grid');
-// const squares = document.createElement('div');
-// squares.style.backgroundColor = 'blue';
-// const gridSize = document.querySelector('.gridSize');
-const gridSize = document.querySelector('.gridSizeButton');
+const gridSize = document.querySelector('.grid-size-button');
+const flexContainer = document.querySelector('.flex-container');
+const gridSizeTitle = document.querySelector('.grid-size-title');
+
 
 function createGrid() {
     for (i=0; i<256; i++) {
@@ -14,49 +14,38 @@ function createGrid() {
             squares.style.backgroundColor = 'black';
         })
     }
-    // console.log(grid);
 }
 createGrid();
-
-// function chooseGrid() {
-//     let result;
-//     gridSize.addEventListener('change', (e) => {
-//         result = e.target.value;
-//         console.log(result);
-//     })
-// }
-// chooseGrid();
 
 function chooseGrid() {
     let result;
     gridSize.addEventListener('click', () => {
-        result = Number(prompt('Choose grid size'));
-        console.log(result);
+        result = Number(prompt('Choose grid size between 2 and 100'));
+        if (result >= 2 && result <= 100) {
         grid.replaceChildren("");
-        // console.log(grid);
-        // clearGrid(grid);
         newGrid(result, result);
-        // newGrid(result, result);
+        } else {
+            alert("Please choose a number between 2 and 100");
+        }
     })
 }
 chooseGrid();
 
-// function clearGrid(grid) {
-//     console.log(grid);
-//     grid.empty();
-// };
-
-
 function newGrid(num, num) {
     for (i=0; i<num*num; i++) {
+        gridSizeTitle.textContent = `Grid Dimensions ${num}x${num}`;
         const squares = document.createElement('div');
         grid.appendChild(squares);
         squares.classList.add('squares');
         grid.setAttribute('style', `grid-template-columns: repeat(${num}, 2fr)`, `grid-template-rows: repeat(${num}, 2fr)`);
         squares.addEventListener('mouseover', () => {
-            squares.style.backgroundColor = 'black';
+        squares.style.backgroundColor = 'black';
         })
     }
     console.log(grid);
 }
-// newGrid();
+
+// function clearGrid(grid) {
+//     console.log(grid);
+//     grid.empty();
+// };
