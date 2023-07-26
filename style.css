@@ -7,17 +7,11 @@
     width: 500px;
     height: 500px;
     display: inline-grid;
-    grid-template-columns: repeat(16, 2fr);
-    grid-template-rows: repeat(16, 2fr);
+    /* grid-template-columns: repeat(16, 2fr);
+    grid-template-rows: repeat(16, 2fr); */
 }
 
 .squares {
-    border: solid red;
-    background-color: blue;
-    cursor: pointer;
-    flex: 1;
+    border: solid black 1px;
+    cursor: crosshair;
 }
-
-.squares:hover {
-    background-color: yellow;
-}   
