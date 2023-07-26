@@ -1,0 +1,23 @@
+.title {
+    font-size: 36px;
+}
+
+.grid {
+    border: solid black;
+    width: 500px;
+    height: 500px;
+    display: inline-grid;
+    grid-template-columns: repeat(16, 2fr);
+    grid-template-rows: repeat(16, 2fr);
+}
+
+.squares {
+    border: solid red;
+    background-color: blue;
+    cursor: pointer;
+    flex: 1;
+}
+
+.squares:hover {
+    background-color: yellow;
+}   
